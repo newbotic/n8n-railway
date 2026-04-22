@@ -22,4 +22,4 @@ ENV WEBHOOK_URL=https://${RAILWAY_PUBLIC_DOMAIN}
 EXPOSE 5678
 
 # Folosim comanda directă a executabilului
-CMD ["/usr/local/bin/n8n", "start"]
+CMD ["/usr/local/bin/n8n", "start"]# Fix for Railway deploy
