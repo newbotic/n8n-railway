@@ -23,3 +23,4 @@ EXPOSE 5678
 
 # Folosim comanda directă a executabilului
 CMD ["/usr/local/bin/n8n", "start"]# Fix for Railway deploy
+# Deploy at Wed, Apr 22, 2026  9:49:24 PM
