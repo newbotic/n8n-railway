@@ -6,4 +6,5 @@ ENV NODE_ENV=production
 
 EXPOSE 5678
 
-CMD ["/usr/local/bin/n8n", "start"]
+# Comanda de start standard, așa cum e definită în imaginea oficială
+CMD ["n8n", "start"]
