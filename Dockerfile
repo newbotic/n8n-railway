@@ -1,10 +1,9 @@
 FROM n8nio/n8n:latest
 
-# Setăm utilizatorul root pentru a putea face modificări
+# Setăm utilizatorul root pentru a crea directoarele cu permisiuni
 USER root
 
-# Instalăm SQLite folosind apt-get (Debian/Ubuntu)
-RUN apt-get update && apt-get install -y sqlite3 && rm -rf /var/lib/apt/lists/*
+# Ne asigurăm că directorul de date există și are permisiunile corecte
 RUN mkdir -p /home/node/.n8n && chown -R node:node /home/node/.n8n
 
 # Ne întoarcem la utilizatorul node pentru securitate
@@ -21,6 +20,5 @@ ENV WEBHOOK_URL=https://${RAILWAY_PUBLIC_DOMAIN}
 # Expunem portul pe care rulează aplicația
 EXPOSE 5678
 
-# Folosim comanda directă a executabilului
-CMD ["/usr/local/bin/n8n", "start"]# Fix for Railway deploy
-# Deploy at Wed, Apr 22, 2026  9:49:24 PM
+# Folosim comanda de start standard
+CMD ["n8n", "start"]
