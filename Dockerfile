@@ -3,8 +3,8 @@ FROM n8nio/n8n:latest
 # Setăm utilizatorul root pentru a putea face modificări
 USER root
 
-# Instalăm SQLite și creăm directoarele cu permisiunile corecte
-RUN apk add --no-cache sqlite
+# Instalăm SQLite folosind apt-get (Debian/Ubuntu)
+RUN apt-get update && apt-get install -y sqlite3 && rm -rf /var/lib/apt/lists/*
 RUN mkdir -p /home/node/.n8n && chown -R node:node /home/node/.n8n
 
 # Ne întoarcem la utilizatorul node pentru securitate
