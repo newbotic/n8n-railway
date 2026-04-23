@@ -10,7 +10,6 @@ RUN mkdir -p /home/node/.n8n && chown -R node:node /home/node/.n8n
 USER node
 
 # Setăm variabilele de mediu de bază
-# N8N_HOST și WEBHOOK_URL se setează în Railway Dashboard → Variables
 ENV N8N_PORT=5678
 ENV N8N_PROTOCOL=https
 ENV NODE_ENV=production
